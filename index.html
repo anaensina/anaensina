@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AnaEnsina IA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f5f7fb;
+color:#1f2a44;
+}
+
+header{
+background:white;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#4A90E2;
+}
+
+.hero{
+padding:80px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.hero-text h1{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero-text span{
+color:#4A90E2;
+}
+
+.hero-text p{
+font-size:18px;
+margin-bottom:30px;
+color:#555;
+}
+
+.btn{
+background:#4A90E2;
+color:white;
+padding:15px 30px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+width:400px;
+}
+
+.input{
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#4A90E2;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+font-weight:600;
+}
+
+.features{
+padding:80px 8%;
+}
+
+.features h2{
+text-align:center;
+margin-bottom:40px;
+font-size:40px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.feature{
+background:white;
+padding:25px;
+border-radius:16px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+footer{
+background:#1f2a44;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:60px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">AnaEnsina IA</div>
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
+<h1>Crie aulas com <span>Inteligência Artificial</span></h1>
+
+<p>
+Planejamentos, atividades, avaliações e materiais pedagógicos em segundos.
+</p>
+
+<a href="dashboard.html" class="btn">
+Entrar na Plataforma
+</a>
+</div>
+
+<div class="card">
+
+<h3>Gerar Aula</h3>
+
+<select class="input">
+<option>Disciplina</option>
+<option>Matemática</option>
+<option>Português</option>
+<option>Ciências</option>
+</select>
+
+<select class="input">
+<option>Série</option>
+<option>1º Ano</option>
+<option>2º Ano</option>
+<option>3º Ano</option>
+<option>4º Ano</option>
+<option>5º Ano</option>
+<option>6º Ano</option>
+</select>
+
+<input
+class="input"
+type="text"
+placeholder="Tema da Aula">
+
+<button>Gerar Aula</button>
+
+</div>
+
+</section>
+
+<section class="features">
+
+<h2>Recursos</h2>
+
+<div class="grid">
+
+<div class="feature">
+<h3>📚 Planejamento de Aula</h3>
+<p>Crie aulas completas automaticamente.</p>
+</div>
+
+<div class="feature">
+<h3>📝 Atividades</h3>
+<p>Gere listas de exercícios em segundos.</p>
+</div>
+
+<div class="feature">
+<h3>📋 Avaliações</h3>
+<p>Monte provas prontas para impressão.</p>
+</div>
+
+<div class="feature">
+<h3>🤖 IA Educacional</h3>
+<p>Assistente inteligente para professores.</p>
+</div>
+
+<div class="feature">
+<h3>📄 Exportar PDF</h3>
+<p>Baixe materiais em PDF.</p>
+</div>
+
+<div class="feature">
+<h3>☁️ Nuvem</h3>
+<p>Salve seus conteúdos online.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 AnaEnsina IA
+</footer>
+
+</body>
+</html>
