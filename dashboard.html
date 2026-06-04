@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Painel - AnaEnsina IA</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+display:flex;
+background:#f5f7fb;
+}
+
+.sidebar{
+width:280px;
+height:100vh;
+background:#1F2A44;
+color:white;
+position:fixed;
+left:0;
+top:0;
+padding:30px;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+margin-bottom:40px;
+}
+
+.menu a{
+display:block;
+padding:15px;
+margin-bottom:10px;
+text-decoration:none;
+color:white;
+border-radius:12px;
+transition:.3s;
+}
+
+.menu a:hover{
+background:#4A90E2;
+}
+
+.main{
+margin-left:280px;
+padding:40px;
+width:100%;
+}
+
+.topo{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+.topo h1{
+font-size:35px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-bottom:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.card h3{
+font-size:30px;
+color:#4A90E2;
+}
+
+.formulario{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+margin-bottom:30px;
+}
+
+.formulario h2{
+margin-bottom:20px;
+}
+
+.input{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+textarea{
+width:100%;
+height:120px;
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+margin-bottom:15px;
+resize:none;
+}
+
+button{
+padding:15px 30px;
+background:#4A90E2;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+font-weight:600;
+}
+
+.resultado{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.resultado h2{
+margin-bottom:20px;
+}
+
+#conteudoGerado{
+white-space:pre-line;
+line-height:1.8;
+}
+
+@media(max-width:900px){
+
+.sidebar{
+width:100%;
+height:auto;
+position:relative;
+}
+
+.main{
+margin-left:0;
+}
+
+body{
+flex-direction:column;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<div class="logo">
+AnaEnsina IA
+</div>
+
+<div class="menu">
+<a href="#">🏠 Início</a>
+<a href="#">📚 Aulas</a>
+<a href="#">📝 Atividades</a>
+<a href="#">📋 Avaliações</a>
+<a href="#">🤖 Assistente IA</a>
+<a href="#">📄 PDF</a>
+<a href="#">⚙️ Configurações</a>
+</div>
+
+</div>
+
+<div class="main">
+
+<div class="topo">
+<h1>Dashboard</h1>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>12</h3>
+<p>Aulas Criadas</p>
+</div>
+
+<div class="card">
+<h3>8</h3>
+<p>Avaliações</p>
+</div>
+
+<div class="card">
+<h3>15</h3>
+<p>Atividades</p>
+</div>
+
+</div>
+
+<div class="formulario">
+
+<h2>Gerar Aula</h2>
+
+<select class="input" id="disciplina">
+<option>Matemática</option>
+<option>Português</option>
+<option>Ciências</option>
+<option>História</option>
+<option>Geografia</option>
+</select>
+
+<select class="input" id="serie">
+<option>1º Ano</option>
+<option>2º Ano</option>
+<option>3º Ano</option>
+<option>4º Ano</option>
+<option>5º Ano</option>
+<option>6º Ano</option>
+</select>
+
+<input
+class="input"
+type="text"
+id="tema"
+placeholder="Tema da Aula">
+
+<textarea
+id="objetivo"
+placeholder="Objetivo da Aula">
+</textarea>
+
+<button onclick="gerarAula()">
+Gerar Aula
+</button>
+
+</div>
+
+<div class="resultado">
+
+<h2>Resultado</h2>
+
+<div id="conteudoGerado">
+
+Sua aula aparecerá aqui.
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function gerarAula(){
+
+let disciplina =
+document.getElementById("disciplina").value;
+
+let serie =
+document.getElementById("serie").value;
+
+let tema =
+document.getElementById("tema").value;
+
+let objetivo =
+document.getElementById("objetivo").value;
+
+document.getElementById("conteudoGerado").innerHTML =
+
+`
+<h3>${tema}</h3>
+
+<p><b>Disciplina:</b> ${disciplina}</p>
+
+<p><b>Série:</b> ${serie}</p>
+
+<p><b>Objetivo:</b> ${objetivo}</p>
+
+<hr>
+
+<h4>Introdução</h4>
+
+<p>
+Conteúdo gerado pela IA será exibido aqui.
+</p>
+
+<h4>Desenvolvimento</h4>
+
+<p>
+Explanação do tema.
+</p>
+
+<h4>Atividade</h4>
+
+<p>
+Questões geradas automaticamente.
+</p>
+
+<h4>Conclusão</h4>
+
+<p>
+Resumo final da aula.
+</p>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
