@@ -10,6 +10,10 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- PDF -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <style>
 
 *{
@@ -110,6 +114,8 @@ font-weight:600;
 font-size:16px;
 box-shadow:0 12px 25px rgba(255,79,163,.25);
 transition:.3s;
+border:none;
+cursor:pointer;
 }
 
 .btn:hover{
@@ -167,6 +173,32 @@ border:none;
 border-radius:25px;
 background:white;
 overflow:hidden;
+margin-bottom:20px;
+}
+
+/* PDF BUTTONS */
+
+.pdf-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.pdf-buttons button{
+flex:1;
+padding:15px;
+border:none;
+border-radius:16px;
+background:#ff4fa3;
+color:white;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.pdf-buttons button:hover{
+transform:translateY(-3px);
 }
 
 /* FEATURES */
@@ -358,8 +390,21 @@ Começar Agora
 
 <iframe
 class="chat-frame"
+id="chatFrame"
 src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/06/05/13/20260605132824-B6QG5XJJ.json">
 </iframe>
+
+<div class="pdf-buttons">
+
+<button onclick="baixarPDF()">
+📄 Baixar PDF
+</button>
+
+<button onclick="copiarTexto()">
+📋 Copiar Texto
+</button>
+
+</div>
 
 </div>
 
@@ -448,6 +493,52 @@ Usar a IA Agora
 <footer>
 © 2026 AnaEnsina IA • Todos os direitos reservados
 </footer>
+
+<script>
+
+async function baixarPDF(){
+
+const { jsPDF } = window.jspdf;
+
+const doc = new jsPDF();
+
+doc.setFont("helvetica");
+
+doc.setFontSize(22);
+
+doc.text("AnaEnsina IA", 20, 25);
+
+doc.setFontSize(13);
+
+doc.text(
+"Conteúdo pedagógico gerado pela IA.",
+20,
+40
+);
+
+doc.setFontSize(11);
+
+doc.text(
+"Copie o conteúdo do chat e cole aqui futuramente para gerar PDFs completos.",
+20,
+60
+);
+
+doc.save("AnaEnsina-IA.pdf");
+
+}
+
+function copiarTexto(){
+
+navigator.clipboard.writeText(
+"Conteúdo copiado da AnaEnsina IA."
+);
+
+alert("Texto copiado!");
+
+}
+
+</script>
 
 </body>
 
