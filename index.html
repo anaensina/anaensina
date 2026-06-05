@@ -447,16 +447,12 @@ return;
 
 doc.setFont("helvetica");
 
-doc.setFontSize(24);
-
-doc.text("AnaEnsina IA",20,20);
-
 doc.setFontSize(12);
 
 const linhas =
 doc.splitTextToSize(texto,170);
 
-doc.text(linhas,20,40);
+doc.text(linhas,20,20);
 
 doc.save("Aula-AnaEnsina.pdf");
 
