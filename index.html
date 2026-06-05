@@ -17,6 +17,7 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
@@ -30,7 +31,7 @@ overflow-x:hidden;
 
 header{
 width:100%;
-padding:25px 8%;
+padding:22px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -38,8 +39,8 @@ position:fixed;
 top:0;
 left:0;
 z-index:999;
-background:rgba(255,255,255,.6);
-backdrop-filter:blur(15px);
+background:rgba(255,255,255,.55);
+backdrop-filter:blur(18px);
 border-bottom:1px solid rgba(255,255,255,.3);
 }
 
@@ -51,12 +52,12 @@ color:#ff4fa3;
 
 .menu{
 display:flex;
-gap:25px;
+gap:28px;
 }
 
 .menu a{
 text-decoration:none;
-color:#5e3b4d;
+color:#5d3a4b;
 font-weight:500;
 transition:.3s;
 }
@@ -68,20 +69,20 @@ color:#ff4fa3;
 /* HERO */
 
 .hero{
-padding:160px 8% 100px;
+padding:170px 8% 100px;
 display:flex;
-align-items:center;
 justify-content:space-between;
-gap:60px;
+align-items:center;
+gap:70px;
 flex-wrap:wrap;
 }
 
 .hero-text{
-max-width:650px;
+max-width:620px;
 }
 
 .hero-text h1{
-font-size:65px;
+font-size:68px;
 line-height:1.1;
 margin-bottom:25px;
 color:#3f2331;
@@ -93,21 +94,21 @@ color:#ff4fa3;
 
 .hero-text p{
 font-size:20px;
-line-height:1.8;
-color:#6d5060;
+line-height:1.9;
+color:#6b4f5d;
 margin-bottom:35px;
 }
 
 .btn{
 display:inline-block;
-padding:16px 35px;
+padding:17px 35px;
 background:#ff4fa3;
 color:white;
 text-decoration:none;
 border-radius:16px;
 font-weight:600;
 font-size:16px;
-box-shadow:0 10px 25px rgba(255,79,163,.3);
+box-shadow:0 12px 25px rgba(255,79,163,.25);
 transition:.3s;
 }
 
@@ -115,28 +116,29 @@ transition:.3s;
 transform:translateY(-4px);
 }
 
-/* CHAT BOX */
+/* CHAT */
 
-.chat-box{
-width:430px;
-background:rgba(255,255,255,.7);
+.chat-container{
+width:470px;
+background:rgba(255,255,255,.55);
 backdrop-filter:blur(18px);
-border-radius:30px;
-padding:25px;
-box-shadow:0 15px 40px rgba(255,79,163,.15);
-border:1px solid rgba(255,255,255,.4);
+padding:20px;
+border-radius:35px;
+box-shadow:0 15px 45px rgba(255,79,163,.18);
+border:1px solid rgba(255,255,255,.5);
 }
 
-.chat-header{
+.chat-title{
 display:flex;
 align-items:center;
 gap:15px;
 margin-bottom:20px;
+padding:0 10px;
 }
 
 .chat-avatar{
-width:55px;
-height:55px;
+width:58px;
+height:58px;
 background:#ff4fa3;
 border-radius:50%;
 display:flex;
@@ -146,71 +148,25 @@ font-size:24px;
 color:white;
 }
 
-.chat-header h3{
-font-size:22px;
+.chat-title h3{
+font-size:24px;
+color:#3f2331;
 }
 
-.chat-header p{
+.chat-title p{
 font-size:14px;
-color:#777;
+color:#7b6470;
 }
 
-.chat-messages{
-height:400px;
-overflow-y:auto;
-padding-right:5px;
-margin-bottom:20px;
-}
+/* IFRAME */
 
-.message{
-padding:15px 18px;
-border-radius:18px;
-margin-bottom:15px;
-line-height:1.7;
-font-size:15px;
-}
-
-.bot{
-background:#ffe1ef;
-color:#5a3445;
-}
-
-.user{
-background:#ff4fa3;
-color:white;
-margin-left:auto;
-width:fit-content;
-max-width:90%;
-}
-
-.chat-input{
-display:flex;
-gap:10px;
-}
-
-.chat-input input{
-flex:1;
-padding:15px;
+.chat-frame{
+width:100%;
+height:650px;
 border:none;
-border-radius:14px;
-outline:none;
-font-size:15px;
+border-radius:25px;
 background:white;
-}
-
-.chat-input button{
-border:none;
-background:#ff4fa3;
-color:white;
-padding:15px 20px;
-border-radius:14px;
-cursor:pointer;
-font-weight:600;
-transition:.3s;
-}
-
-.chat-input button:hover{
-transform:scale(1.05);
+overflow:hidden;
 }
 
 /* FEATURES */
@@ -225,14 +181,14 @@ margin-bottom:60px;
 }
 
 .features-title h2{
-font-size:50px;
-color:#3f2331;
+font-size:52px;
 margin-bottom:15px;
+color:#3f2331;
 }
 
 .features-title p{
 font-size:18px;
-color:#6d5060;
+color:#6b4f5d;
 }
 
 .grid{
@@ -242,9 +198,9 @@ gap:25px;
 }
 
 .feature{
-background:rgba(255,255,255,.7);
+background:rgba(255,255,255,.6);
 padding:30px;
-border-radius:25px;
+border-radius:28px;
 backdrop-filter:blur(15px);
 box-shadow:0 10px 30px rgba(255,79,163,.12);
 transition:.3s;
@@ -255,14 +211,45 @@ transform:translateY(-8px);
 }
 
 .feature h3{
-margin-bottom:15px;
 font-size:24px;
+margin-bottom:15px;
 color:#ff4fa3;
 }
 
 .feature p{
 line-height:1.8;
-color:#6d5060;
+color:#6b4f5d;
+}
+
+/* CTA */
+
+.cta{
+padding:0 8% 100px;
+}
+
+.cta-box{
+background:linear-gradient(135deg,#ff4fa3,#ff7abf);
+padding:60px;
+border-radius:35px;
+text-align:center;
+color:white;
+box-shadow:0 20px 40px rgba(255,79,163,.25);
+}
+
+.cta-box h2{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.cta-box p{
+font-size:18px;
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.cta-box a{
+background:white;
+color:#ff4fa3;
 }
 
 /* FOOTER */
@@ -270,7 +257,7 @@ color:#6d5060;
 footer{
 padding:40px;
 text-align:center;
-color:#6d5060;
+color:#7a5f6c;
 font-size:15px;
 }
 
@@ -284,19 +271,31 @@ padding-top:140px;
 }
 
 .hero-text h1{
-font-size:45px;
+font-size:48px;
 }
 
-.chat-box{
+.chat-container{
 width:100%;
+}
+
+.menu{
+display:none;
 }
 
 header{
 padding:20px;
 }
 
-.menu{
-display:none;
+.features-title h2{
+font-size:40px;
+}
+
+.cta-box{
+padding:40px 25px;
+}
+
+.cta-box h2{
+font-size:34px;
 }
 
 }
@@ -315,9 +314,9 @@ AnaEnsina IA
 
 <div class="menu">
 <a href="#">Início</a>
-<a href="#">Recursos</a>
-<a href="#">Professores</a>
-<a href="#">IA Educacional</a>
+<a href="#recursos">Recursos</a>
+<a href="#chat">IA Educacional</a>
+<a href="#professores">Professores</a>
 </div>
 
 </header>
@@ -342,9 +341,9 @@ Começar Agora
 
 </div>
 
-<div class="chat-box" id="chat">
+<div class="chat-container" id="chat">
 
-<div class="chat-header">
+<div class="chat-title">
 
 <div class="chat-avatar">
 🤖
@@ -357,40 +356,16 @@ Começar Agora
 
 </div>
 
-<div class="chat-messages">
-
-<div class="message bot">
-Olá professora 💖<br><br>
-Posso criar:
-<br><br>
-• Planejamento de aula<br>
-• Atividades<br>
-• Avaliações<br>
-• Conteúdos pedagógicos<br>
-• Adaptações inclusivas<br><br>
-
-Digite sua solicitação abaixo ✨
-</div>
-
-</div>
-
-<div class="chat-input">
-
-<input
-type="text"
-placeholder="Digite sua mensagem...">
-
-<button>
-Enviar
-</button>
-
-</div>
+<iframe
+class="chat-frame"
+src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/06/05/13/20260605132824-B6QG5XJJ.json">
+</iframe>
 
 </div>
 
 </section>
 
-<section class="features">
+<section class="features" id="recursos">
 
 <div class="features-title">
 
@@ -450,18 +425,29 @@ Baixe conteúdos em PDF de maneira rápida e organizada.
 
 </section>
 
+<section class="cta" id="professores">
+
+<div class="cta-box">
+
+<h2>
+Transforme sua rotina pedagógica
+</h2>
+
+<p>
+Economize horas de planejamento e utilize inteligência artificial para criar conteúdos educacionais incríveis.
+</p>
+
+<a href="#chat" class="btn">
+Usar a IA Agora
+</a>
+
+</div>
+
+</section>
+
 <footer>
 © 2026 AnaEnsina IA • Todos os direitos reservados
 </footer>
-
-<!-- BOTPRESS -->
-
-<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-
-<script
-src="https://files.bpcontent.cloud/2026/06/05/13/20260605132824-B6QG5XJJ.js"
-defer>
-</script>
 
 </body>
 
