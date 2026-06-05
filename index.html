@@ -10,8 +10,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- PDF -->
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <style>
@@ -26,7 +24,6 @@ scroll-behavior:smooth;
 
 body{
 background:linear-gradient(135deg,#ffe4ef,#ffd6eb,#fff0f7);
-min-height:100vh;
 color:#4b2c3d;
 overflow-x:hidden;
 }
@@ -74,67 +71,43 @@ color:#ff4fa3;
 
 .hero{
 padding:170px 8% 100px;
-display:flex;
-justify-content:space-between;
-align-items:flex-start;
-gap:70px;
-flex-wrap:wrap;
+text-align:center;
 }
 
-.hero-text{
-max-width:620px;
-}
-
-.hero-text h1{
+.hero h1{
 font-size:68px;
 line-height:1.1;
 margin-bottom:25px;
 color:#3f2331;
 }
 
-.hero-text span{
+.hero span{
 color:#ff4fa3;
 }
 
-.hero-text p{
+.hero p{
 font-size:20px;
 line-height:1.9;
 color:#6b4f5d;
-margin-bottom:35px;
-}
-
-.btn{
-display:inline-block;
-padding:17px 35px;
-background:#ff4fa3;
-color:white;
-text-decoration:none;
-border-radius:16px;
-font-weight:600;
-font-size:16px;
-box-shadow:0 12px 25px rgba(255,79,163,.25);
-transition:.3s;
-border:none;
-cursor:pointer;
-}
-
-.btn:hover{
-transform:translateY(-4px);
+max-width:900px;
+margin:auto;
 }
 
 /* CHAT */
 
-.chat-container{
-width:520px;
-background:rgba(255,255,255,.6);
-backdrop-filter:blur(18px);
-padding:25px;
-border-radius:35px;
-box-shadow:0 15px 45px rgba(255,79,163,.18);
-border:1px solid rgba(255,255,255,.5);
+.chat-section{
+padding:0 8% 100px;
 }
 
-.chat-title{
+.chat-box{
+background:rgba(255,255,255,.6);
+padding:30px;
+border-radius:35px;
+backdrop-filter:blur(15px);
+box-shadow:0 15px 45px rgba(255,79,163,.15);
+}
+
+.chat-header{
 display:flex;
 align-items:center;
 gap:15px;
@@ -153,43 +126,75 @@ font-size:25px;
 color:white;
 }
 
-.chat-title h3{
-font-size:24px;
+.chat-header h2{
+font-size:28px;
 color:#3f2331;
 }
 
-.chat-title p{
+.chat-header p{
 font-size:14px;
 color:#7b6470;
 }
 
-/* FORM */
-
-.chat-form{
-display:flex;
-flex-direction:column;
-gap:15px;
-margin-bottom:20px;
+iframe{
+width:100%;
+height:700px;
+border:none;
+border-radius:25px;
+background:white;
 }
 
-.chat-form textarea{
-width:100%;
-height:150px;
-border:none;
-padding:18px;
-border-radius:18px;
-font-size:15px;
-outline:none;
-resize:none;
-background:white;
-color:#4b2c3d;
+/* PDF */
+
+.pdf-section{
+padding:0 8% 100px;
+}
+
+.pdf-box{
+background:rgba(255,255,255,.6);
+padding:35px;
+border-radius:35px;
+backdrop-filter:blur(15px);
+box-shadow:0 15px 45px rgba(255,79,163,.15);
+}
+
+.pdf-box h2{
+font-size:36px;
+margin-bottom:15px;
+color:#3f2331;
+}
+
+.pdf-box p{
+margin-bottom:25px;
+color:#6b4f5d;
 line-height:1.8;
 }
 
-.chat-form button{
-padding:16px;
+textarea{
+width:100%;
+height:400px;
+padding:25px;
 border:none;
-border-radius:16px;
+border-radius:25px;
+resize:none;
+outline:none;
+font-size:15px;
+line-height:1.9;
+color:#4b2c3d;
+margin-bottom:25px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+button{
+flex:1;
+padding:18px;
+border:none;
+border-radius:18px;
 background:#ff4fa3;
 color:white;
 font-size:16px;
@@ -198,55 +203,14 @@ cursor:pointer;
 transition:.3s;
 }
 
-.chat-form button:hover{
-transform:translateY(-3px);
-}
-
-/* RESULTADO IA */
-
-.resultado{
-background:white;
-padding:25px;
-border-radius:25px;
-min-height:300px;
-line-height:1.9;
-color:#4b2c3d;
-white-space:pre-line;
-box-shadow:0 10px 25px rgba(0,0,0,.05);
-overflow:auto;
-max-height:600px;
-}
-
-/* PDF */
-
-.pdf-buttons{
-display:flex;
-gap:15px;
-margin-top:20px;
-flex-wrap:wrap;
-}
-
-.pdf-buttons button{
-flex:1;
-padding:15px;
-border:none;
-border-radius:16px;
-background:#ff4fa3;
-color:white;
-font-size:15px;
-font-weight:600;
-cursor:pointer;
-transition:.3s;
-}
-
-.pdf-buttons button:hover{
-transform:translateY(-3px);
+button:hover{
+transform:translateY(-4px);
 }
 
 /* FEATURES */
 
 .features{
-padding:100px 8%;
+padding:0 8% 100px;
 }
 
 .features-title{
@@ -258,11 +222,6 @@ margin-bottom:60px;
 font-size:52px;
 margin-bottom:15px;
 color:#3f2331;
-}
-
-.features-title p{
-font-size:18px;
-color:#6b4f5d;
 }
 
 .grid{
@@ -277,11 +236,6 @@ padding:30px;
 border-radius:28px;
 backdrop-filter:blur(15px);
 box-shadow:0 10px 30px rgba(255,79,163,.12);
-transition:.3s;
-}
-
-.feature:hover{
-transform:translateY(-8px);
 }
 
 .feature h3{
@@ -306,19 +260,10 @@ font-size:15px;
 
 /* MOBILE */
 
-@media(max-width:1000px){
+@media(max-width:900px){
 
-.hero{
-flex-direction:column;
-padding-top:140px;
-}
-
-.hero-text h1{
-font-size:48px;
-}
-
-.chat-container{
-width:100%;
+.hero h1{
+font-size:45px;
 }
 
 .menu{
@@ -329,8 +274,12 @@ header{
 padding:20px;
 }
 
-.features-title h2{
-font-size:40px;
+.buttons{
+flex-direction:column;
+}
+
+iframe{
+height:600px;
 }
 
 }
@@ -349,15 +298,13 @@ AnaEnsina IA
 
 <div class="menu">
 <a href="#">Início</a>
-<a href="#recursos">Recursos</a>
-<a href="#chat">IA Educacional</a>
+<a href="#chat">IA</a>
+<a href="#pdf">PDF</a>
 </div>
 
 </header>
 
 <section class="hero">
-
-<div class="hero-text">
 
 <h1>
 Crie aulas com
@@ -369,49 +316,53 @@ Planejamentos, atividades, avaliações e conteúdos pedagógicos completos em s
 Uma IA criada especialmente para professores da educação brasileira.
 </p>
 
-<a href="#chat" class="btn">
-Começar Agora
-</a>
+</section>
 
-</div>
+<!-- CHAT -->
 
-<div class="chat-container" id="chat">
+<section class="chat-section" id="chat">
 
-<div class="chat-title">
+<div class="chat-box">
+
+<div class="chat-header">
 
 <div class="chat-avatar">
 🤖
 </div>
 
 <div>
-<h3>AnaEnsina IA</h3>
+<h2>AnaEnsina IA</h2>
 <p>Assistente pedagógica inteligente</p>
 </div>
 
 </div>
 
-<div class="chat-form">
+<iframe
+src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/06/05/13/20260605132824-B6QG5XJJ.json">
+</iframe>
+
+</div>
+
+</section>
+
+<!-- PDF -->
+
+<section class="pdf-section" id="pdf">
+
+<div class="pdf-box">
+
+<h2>Gerador de PDF</h2>
+
+<p>
+Copie o conteúdo gerado pela IA e cole abaixo para exportar em PDF.
+</p>
 
 <textarea
-id="pergunta"
-placeholder="Ex: Crie uma aula de matemática sobre frações para o 5º ano alinhada à BNCC...">
+id="conteudoPDF"
+placeholder="Cole aqui o conteúdo gerado pela IA...">
 </textarea>
 
-<button onclick="gerarResposta()">
-Gerar Conteúdo com IA
-</button>
-
-</div>
-
-<div
-class="resultado"
-id="resultadoIA">
-
-Sua aula aparecerá aqui...
-
-</div>
-
-<div class="pdf-buttons">
+<div class="buttons">
 
 <button onclick="baixarPDF()">
 📄 Baixar PDF
@@ -427,15 +378,13 @@ Sua aula aparecerá aqui...
 
 </section>
 
-<section class="features" id="recursos">
+<!-- FEATURES -->
+
+<section class="features">
 
 <div class="features-title">
 
 <h2>Recursos Inteligentes</h2>
-
-<p>
-Tudo o que um professor precisa em um só lugar.
-</p>
 
 </div>
 
@@ -444,28 +393,28 @@ Tudo o que um professor precisa em um só lugar.
 <div class="feature">
 <h3>📚 Planejamento</h3>
 <p>
-Crie aulas completas automaticamente com metodologias alinhadas à BNCC.
+Crie aulas completas automaticamente alinhadas à BNCC.
 </p>
 </div>
 
 <div class="feature">
 <h3>📝 Atividades</h3>
 <p>
-Gere exercícios personalizados para qualquer série escolar.
+Gere exercícios personalizados rapidamente.
 </p>
 </div>
 
 <div class="feature">
 <h3>📋 Avaliações</h3>
 <p>
-Monte provas prontas para impressão em segundos.
+Monte provas prontas para impressão.
 </p>
 </div>
 
 <div class="feature">
 <h3>💖 Inclusão</h3>
 <p>
-Adapte conteúdos para alunos com deficiência intelectual e necessidades específicas.
+Adapte conteúdos para alunos com DI e necessidades específicas.
 </p>
 </div>
 
@@ -479,76 +428,6 @@ Adapte conteúdos para alunos com deficiência intelectual e necessidades espec�
 
 <script>
 
-/* =========================================
-   COLE AQUI O WEBHOOK DO BOTPRESS
-========================================= */
-
-const WEBHOOK_URL =
-"https://chat.botpress.cloud/SEU-WEBHOOK-AQUI";
-
-/* =========================================
-   GERAR RESPOSTA IA
-========================================= */
-
-async function gerarResposta(){
-
-let pergunta =
-document.getElementById("pergunta").value;
-
-if(!pergunta){
-
-alert("Digite uma solicitação.");
-
-return;
-
-}
-
-document.getElementById("resultadoIA").innerHTML =
-"Gerando conteúdo com IA...";
-
-try{
-
-const response = await fetch(WEBHOOK_URL,{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-message:pergunta
-})
-
-});
-
-const data = await response.json();
-
-console.log(data);
-
-let resposta =
-data.responses?.[0]?.text ||
-data.message ||
-"Não foi possível gerar a resposta.";
-
-document.getElementById("resultadoIA").innerHTML =
-resposta;
-
-}catch(error){
-
-document.getElementById("resultadoIA").innerHTML =
-"Erro ao conectar com a IA.";
-
-console.error(error);
-
-}
-
-}
-
-/* =========================================
-   BAIXAR PDF
-========================================= */
-
 async function baixarPDF(){
 
 const { jsPDF } = window.jspdf;
@@ -556,7 +435,15 @@ const { jsPDF } = window.jspdf;
 const doc = new jsPDF();
 
 let texto =
-document.getElementById("resultadoIA").innerText;
+document.getElementById("conteudoPDF").value;
+
+if(!texto){
+
+alert("Cole um conteúdo antes.");
+
+return;
+
+}
 
 doc.setFont("helvetica");
 
@@ -575,14 +462,10 @@ doc.save("Aula-AnaEnsina.pdf");
 
 }
 
-/* =========================================
-   COPIAR TEXTO
-========================================= */
-
 function copiarTexto(){
 
 let texto =
-document.getElementById("resultadoIA").innerText;
+document.getElementById("conteudoPDF").value;
 
 navigator.clipboard.writeText(texto);
 
