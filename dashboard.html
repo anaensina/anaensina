@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -21,6 +22,7 @@ font-family:'Poppins',sans-serif;
 body{
 display:flex;
 background:#f5f7fb;
+color:#1f2a44;
 }
 
 .sidebar{
@@ -32,6 +34,7 @@ position:fixed;
 left:0;
 top:0;
 padding:30px;
+overflow:auto;
 }
 
 .logo{
@@ -48,6 +51,7 @@ text-decoration:none;
 color:white;
 border-radius:12px;
 transition:.3s;
+font-weight:500;
 }
 
 .menu a:hover{
@@ -65,6 +69,8 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 margin-bottom:30px;
+flex-wrap:wrap;
+gap:20px;
 }
 
 .topo h1{
@@ -83,11 +89,17 @@ background:white;
 padding:25px;
 border-radius:20px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card h3{
-font-size:30px;
+font-size:32px;
 color:#4A90E2;
+margin-bottom:10px;
 }
 
 .formulario{
@@ -100,6 +112,7 @@ margin-bottom:30px;
 
 .formulario h2{
 margin-bottom:20px;
+font-size:28px;
 }
 
 .input{
@@ -108,16 +121,30 @@ padding:15px;
 margin-bottom:15px;
 border:1px solid #ddd;
 border-radius:10px;
+outline:none;
+font-size:15px;
+transition:.3s;
+}
+
+.input:focus{
+border-color:#4A90E2;
 }
 
 textarea{
 width:100%;
-height:120px;
+height:140px;
 padding:15px;
 border:1px solid #ddd;
 border-radius:10px;
 margin-bottom:15px;
 resize:none;
+outline:none;
+font-size:15px;
+transition:.3s;
+}
+
+textarea:focus{
+border-color:#4A90E2;
 }
 
 button{
@@ -129,6 +156,11 @@ border-radius:10px;
 cursor:pointer;
 font-size:16px;
 font-weight:600;
+transition:.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
 }
 
 .resultado{
@@ -140,11 +172,31 @@ box-shadow:0 5px 20px rgba(0,0,0,.08);
 
 .resultado h2{
 margin-bottom:20px;
+font-size:28px;
 }
 
 #conteudoGerado{
 white-space:pre-line;
 line-height:1.8;
+color:#444;
+}
+
+#conteudoGerado h3{
+margin-bottom:15px;
+color:#4A90E2;
+}
+
+#conteudoGerado h4{
+margin-top:20px;
+margin-bottom:10px;
+color:#1F2A44;
+}
+
+.loading{
+display:none;
+margin-top:15px;
+color:#4A90E2;
+font-weight:600;
 }
 
 @media(max-width:900px){
@@ -157,10 +209,15 @@ position:relative;
 
 .main{
 margin-left:0;
+padding:20px;
 }
 
 body{
 flex-direction:column;
+}
+
+.topo h1{
+font-size:28px;
 }
 
 }
@@ -250,6 +307,10 @@ placeholder="Objetivo da Aula">
 Gerar Aula
 </button>
 
+<div class="loading" id="loading">
+Gerando conteúdo...
+</div>
+
 </div>
 
 <div class="resultado">
@@ -282,6 +343,12 @@ document.getElementById("tema").value;
 let objetivo =
 document.getElementById("objetivo").value;
 
+document.getElementById("loading").style.display = "block";
+
+setTimeout(() => {
+
+document.getElementById("loading").style.display = "none";
+
 document.getElementById("conteudoGerado").innerHTML =
 
 `
@@ -295,30 +362,34 @@ document.getElementById("conteudoGerado").innerHTML =
 
 <hr>
 
-<h4>Introdução</h4>
+<h4>📘 Introdução</h4>
 
 <p>
-Conteúdo gerado pela IA será exibido aqui.
+Apresentação do conteúdo de forma clara e objetiva para os alunos.
 </p>
 
-<h4>Desenvolvimento</h4>
+<h4>📖 Desenvolvimento</h4>
 
 <p>
-Explanação do tema.
+Explicação detalhada do tema com exemplos práticos e didáticos.
 </p>
 
-<h4>Atividade</h4>
+<h4>📝 Atividade</h4>
 
 <p>
-Questões geradas automaticamente.
+1. Explique com suas palavras o conteúdo estudado.<br>
+2. Resolva os exercícios propostos.<br>
+3. Faça uma atividade em grupo.
 </p>
 
-<h4>Conclusão</h4>
+<h4>✅ Conclusão</h4>
 
 <p>
-Resumo final da aula.
+Resumo final reforçando os principais pontos da aula.
 </p>
 `;
+
+},1500);
 
 }
 
@@ -326,28 +397,11 @@ Resumo final da aula.
 
 <!-- BOTPRESS IA -->
 
-<script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+<script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
 
-<script>
-
-window.botpressWebChat.init({
-
-botId: "20260605132824-B6QG5XJJ",
-
-hostUrl: "https://cdn.botpress.cloud/webchat/v2",
-
-messagingUrl: "https://messaging.botpress.cloud",
-
-clientId: "20260605132824-B6QG5XJJ",
-
-showPoweredBy: false,
-
-theme: "prism",
-
-themeColor: "#4A90E2"
-
-});
-
+<script
+src="https://files.bpcontent.cloud/2026/06/05/13/20260605132824-B6QG5XJJ.js"
+defer>
 </script>
 
 </body>
